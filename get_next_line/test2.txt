@@ -1,0 +1,19 @@
+/*	ssize_t			blen;
+	char			buf[BUFFER_SIZE] = {0};
+
+str 1
+
+str 2
+
+	blen = read(fd, buf, BUFFER_SIZE);	
+	if (blen >= 0)
+	{
+		if (blen)
+			write_line(line, &i, buf, blen);
+		if (blen == BUFFER_SIZE)
+			return (1);
+		else
+			return (0);
+	}
+	else
+		return (-1);*/
