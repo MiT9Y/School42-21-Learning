@@ -1,0 +1,31 @@
+
+NO	./textures/wall2.xpm
+SO	./textures/wall2.xpm
+WE	./textures/wall2.xpm
+EA	./textures/wall2.xpm
+
+DO	D fixed		0	./textures/door.xpm
+SP	a fixed		2	./textures/fire1.xpm ./textures/fire2.xpm ./textures/fire3.xpm ./textures/fire4.xpm
+SP	c fixed		0	./textures/barrel.xpm
+SP	b move		3	./textures/skeleton_1.xpm ./textures/skeleton_2.xpm ./textures/skeleton_3.xpm ./textures/skeleton_4.xpm
+SP	d fixed		0	./textures/tree.xpm
+SP	z fixed		0	./textures/Tree-256x256.xpm
+
+
+C	173,206,237
+F	174,128,92
+
+        1111111111111111111111111
+        1000000000110000000000001
+        1011000001110001000000001
+        10c100a0000D000D00b01D101
+111111111011000001110001000000001
+100000000011c000d1110111111111111
+1111D1111111110111000000100c1
+1111D111111111011101000010d01
+110000001101010111000d0000001
+10000d0000d00000110000001a001
+10b0000d0000c00011010100z00a1
+11000001110101011111011110aNc111
+1111a111 1110101 100011010001
+11111111 1111111 111111111111
