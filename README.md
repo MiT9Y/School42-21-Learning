@@ -25,3 +25,5 @@ The description of the projects will be contained in the project directories in 
 10. **cub3d (2021-12-11)** - This project is inspired by the world-famous eponymous 90's game, which was the first FPS ever. It will enable you to explore ray-casting. Your goal will be to make a dynamic view inside a maze, in which you'll have to find your way.
 
 11. **CPP Modules (2022-02-06)** - Learning the basics С++
+
+12. **webserver (2022-05-02)** - This project is here to make you write your own HTTP server. You will be able to test it with a real browser. HTTP is one of the most used protocol on internet. Knowing its arcane will be useful, even if you won't be working on a website.
