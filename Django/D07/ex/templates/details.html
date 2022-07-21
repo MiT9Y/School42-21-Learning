@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    {% include "nav.html" %}
+    <div style="padding-left: 50px; padding-right: 50px;">
+        <h3>Detail {{ object.title }}</h3>
+        <p>Author: {{ object.author }} ({{ object.created }})</p>
+        <p>{{ object.synopsis }}</p>
+        <p>{{ object.content }}</p>   
+    </div>
+{% endblock %}

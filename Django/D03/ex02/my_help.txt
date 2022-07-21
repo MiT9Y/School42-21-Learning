@@ -1,0 +1,7 @@
+virtualenv my_virt_env     (python3 -m venv my_virt_env)
+which python3
+source my_virt_env/bin/activate
+which python3
+deactivate
+pip3 freeze > requirement.txt
+pip3 install -r requirement.txt

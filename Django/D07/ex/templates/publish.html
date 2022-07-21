@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    {% include "nav.html" %}
+    {% if messages %}
+        {% for message in messages %}
+            <h5 style="color: brown;">{{ message }}</h5>
+        {% endfor %}
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Publish">
+    </form>	
+{% endblock %}

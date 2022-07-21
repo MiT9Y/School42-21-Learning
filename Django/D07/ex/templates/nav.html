@@ -1,0 +1,20 @@
+<nav style="padding-left: 20px;padding-right: 20px;">
+    {% if user.1 %}
+        <h3>Logged as {{ user.0 }}</h3>
+    {% else %}
+        <h3>Not logged in</h3>
+    {% endif %}
+    <div style="text-align: right;">
+        <a href="{% url 'articles' %}">Home</a><span> | </span>
+        {% if user.1 %}
+            <a href="{% url 'publications' %}">Publications</a><span> | </span>
+            <a href="{% url 'favourites' %}">Favourites</a><span> | </span>
+            <a href="{% url 'publish' %}">Publish</a><span> | </span>
+            <a href="{% url 'logout' %}">Log out</a>
+        {% else %}
+            <a href="{% url 'register' %}">Registration</a><span> | </span>
+            <a href="{% url 'login' %}">Log in</a>
+        {% endif %}
+    </div>
+</nav>
+<hr>

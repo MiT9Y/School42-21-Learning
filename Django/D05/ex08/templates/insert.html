@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Exercise 08: SQL - Foreign Key (insert)</title>
+</head>
+<body>    
+    <h1>Insert in table</h1>
+    {% if all_err is None %}
+        {% for x in res %}
+            <p>{{ x }}</p>
+        {% endfor %}
+    {% else %}
+        <h3>{{ all_err }}</h3>
+    {% endif %}
+</body>
+</html>

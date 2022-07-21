@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "nav.html" %}
+    <div style="padding-left: 50px; padding-right: 50px;">
+        <h3>Favourites {{ user.0 }}</h3>
+		<ul>
+            {% for object in articles %}
+				<li>
+                    <a href="{% url 'detail' pk=object.article_id %}">{{ object.article }}</a>
+                </li>
+            {% endfor %}
+		</ul>
+    </div>
+{% endblock %}

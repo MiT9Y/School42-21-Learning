@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <title>Exercice 05: ORM - Deleting data (select)</title>
+	<style>
+		table, th, td{
+			border:1px solid black;
+			border-collapse: collapse;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>SELECT</h1>
+{% if res %}
+    <table style="border:1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>Episode nb</th>
+            <th>Title</th>
+            <th>Opening crawl</th>
+            <th>Director</th>
+            <th>Producer</th>
+            <th>Release date</th>
+        </tr>
+        {% for line in res %}
+            <tr>
+                <td>{% if line.episode_nb is not None %}{{ line.episode_nb }}{% else %}NULL{% endif %}</td>
+                <td>{% if line.title is not None %}{{ line.title }}{% else %}NULL{% endif %}</td>
+                <td>{% if line.opening_crawl is not None %}{{ line.opening_crawl }}{% else %}NULL{% endif %}</td>
+                <td>{% if line.director is not None %}{{ line.director }}{% else %}NULL{% endif %}</td>
+                <td>{% if line.producer is not None %}{{ line.producer }}{% else %}NULL{% endif %}</td>
+                <td>{% if line.release_date is not None %}{{ line.release_date }}{% else %}NULL{% endif %}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>No data available</p>
+{% endif %}
+</body>
+</html>

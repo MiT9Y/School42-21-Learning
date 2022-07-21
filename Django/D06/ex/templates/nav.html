@@ -1,0 +1,13 @@
+<nav style="padding-left: 20px;padding-right: 20px;">
+    <h3>Hello <span id="user_name">{{ user.0 }}</span>!</h3>
+    <div style="text-align: right;">
+        <a href="/">Life Pro Tips</a><span> | </span>
+        {% if user.1 %}
+            <a href="/logout">Log out</a>
+        {% else %}
+            <a href="/registration">Reistration</a><span> | </span>
+            <a href="/login">Log in</a>
+        {% endif %}
+    </div>
+</nav>
+<hr>

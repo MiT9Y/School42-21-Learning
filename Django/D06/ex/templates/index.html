@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+   	{% include "nav.html" %}
+	{% if form is not None %}
+		<div style="padding-left: 50px; padding-right: 50px;">
+			<form method="post">
+				{% csrf_token %}
+				{% bootstrap_form form %}
+				{% buttons %}
+					<input type="submit" value="create TIP">
+				{% endbuttons %}
+			</form>
+		</div>
+	{% endif %}	
+	{% if tips %}
+		<div style="padding-left: 50px; padding-right: 50px;">
+		{% for x in tips %}
+			<p><h5>Created by: <span style="font-size: large;">{{ x.auteur }}</span> ({{ x.date }})</h5></p>
+			<p style="padding-left: 20px;">{{ x.contentue }}</p>
+			<a href="delete/?id={{ x.id }}" class="btn btn-danger" role="button">
+				{% bootstrap_icon "close" %} Delete
+			</a>
+			<a href="like/?id={{ x.id }}" class="btn btn-success" role="button">
+				{% bootstrap_icon "star" %} Like {{ x.up }}
+			</a>
+			<a href="dislike/?id={{ x.id }}" class="btn btn-info" role="button">
+				{% bootstrap_icon "star-border" %} Dislike {{ x.down }}
+			</a>
+			<hr>
+		{% endfor %}
+		</div>
+	{% endif %}
+{% endblock %}

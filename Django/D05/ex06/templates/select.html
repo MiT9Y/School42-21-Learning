@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <title>Exercise 06: SQL - Updating a data (select)</title>
+	<style>
+		table, th, td{
+			border:1px solid black;
+			border-collapse: collapse;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>SELECT</h1>
+{% if res %}
+    <table style="border:1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>Episode nb</th>
+            <th>Title</th>
+            <th>Opening crawl</th>
+            <th>Director</th>
+            <th>Producer</th>
+            <th>Release date</th>
+            <th>Created</th>
+            <th>Updated</th>
+        </tr>
+        {% for line in res %}
+            <tr>
+                <td>{% if line.0 is not None %}{{ line.0 }}{% else %}NULL{% endif %}</td>
+                <td>{% if line.1 is not None %}{{ line.1 }}{% else %}NULL{% endif %}</td>
+                <td>{% if line.2 is not None %}{{ line.2 }}{% else %}NULL{% endif %}</td>
+                <td>{% if line.3 is not None %}{{ line.3 }}{% else %}NULL{% endif %}</td>
+                <td>{% if line.4 is not None %}{{ line.4 }}{% else %}NULL{% endif %}</td>
+                <td>{% if line.5 is not None %}{{ line.5 }}{% else %}NULL{% endif %}</td>
+                <td>{% if line.6 is not None %}{{ line.6 }}{% else %}NULL{% endif %}</td>
+                <td>{% if line.7 is not None %}{{ line.7 }}{% else %}NULL{% endif %}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>No data available</p>
+{% endif %}
+</body>
+</html>

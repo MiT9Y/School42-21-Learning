@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "nav.html" %}
+    <div style="padding-left: 50px; padding-right: 50px;">
+        <h3>Publications {{ user.0 }}</h3>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Created date</th>
+                <th>Synopsis</th>
+            </tr>
+            {% for object in articles %}
+                <tr>
+                    <td><a href="{% url 'detail' pk=object.id %}">{{ object.title }}</a></td>
+                    <td>{{ object.created }}</td>
+                    <td>{{ object.synopsis }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang='en'>
+<head>
+	<title>myCV</title>
+	<meta charset='utf-8'>
+</head>
+<body>
+    <h1 style="text-align: center;">RESUME</h1>
+	<h2 style="text-align: center;">{name} {surname}</h2>
+    <ul>
+		<li>Age: {age}</li>
+    	<li>Profession: {profesion}</li>
+    </ul>
+</body>
+</html>

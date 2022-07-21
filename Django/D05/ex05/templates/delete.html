@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8">
+        <title>Exercice 05: ORM - Deleting data (delete)</title>
+    </head>
+    <body>
+        <h1>Delete</h1>
+		{% if form %}
+        <form method="post">
+            {% csrf_token %}
+			<table>
+            	{{ form }}
+			</table>
+            <input type="submit" value="delete" />
+        </form>
+		{% else %}
+    		<p>No data available</p>
+		{% endif %}
+    </body>
+</html>

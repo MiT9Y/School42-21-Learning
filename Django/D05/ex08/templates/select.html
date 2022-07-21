@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <title>Exercise 08: SQL - Foreign Key (select)</title>
+	<style>
+		table, th, td{
+			border:1px solid black;
+			border-collapse: collapse;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>SELECT</h1>
+	{% if res %}
+    <table style="border:1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>Characters’ name</th>
+            <th>Homeworld</th>
+            <th>Climate</th>
+        </tr>
+        {% for line in res %}
+            <tr>
+                <td>{% if line.0 is not None %}{{ line.0 }}{% else %}NULL{% endif %}</td>
+                <td>{% if line.1 is not None %}{{ line.1 }}{% else %}NULL{% endif %}</td>
+                <td>{% if line.2 is not None %}{{ line.2 }}{% else %}NULL{% endif %}</td>
+            </tr>
+        {% endfor %}
+    </table>
+	{% else %}
+		<p>No data available</p>
+	{% endif %}
+
+</body>
+</html>

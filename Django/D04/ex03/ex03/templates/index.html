@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Table</title>
+    </head>
+    <style>
+        .size {
+            width:80px;
+            height:40px;
+        }
+    </style>
+    <body>
+<table border="1px solid black">
+    <tr><th>{{ names.0 }}</th><th>{{ names.1 }}</th><th>{{ names.2 }}</th><th>{{ names.3 }}</th></tr>
+    {% for x in data %}
+    <tr>
+        <td class="size" style="background-color:rgba(0, 0, 0, {{ x }})"></td>
+        <td class="size" style="background-color:rgba(255, 0, 0, {{ x }})"></td>
+        <td class="size" style="background-color:rgba(0, 0, 255, {{ x }})"></td>
+        <td class="size" style="background-color:rgba(0, 255, 0, {{ x }})"></td>
+    </tr>
+    {% endfor %}
+</table>
+    </body>
+</html>
