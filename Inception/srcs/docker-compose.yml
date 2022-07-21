@@ -1,0 +1,60 @@
+version: '3.5'
+
+services:
+  gateway:
+    build: $INCEPTION_PATH/srcs/requirements/bonus/.
+    container_name: gateway
+    image: gateway
+    hostname: gateway
+    ports: [0.0.0.0:20-21:20-21, 0.0.0.0:22:22, 0.0.0.0:30000-30010:30000-30010]
+    restart: always
+    volumes: [wordpress:/ftp]
+    env_file: [$INCEPTION_PATH/srcs/.env]
+    networks: {inception_network: {ipv4_address: 192.168.99.1}}
+    stdin_open: true
+    tty: true
+  mariadb:
+    build: $INCEPTION_PATH/srcs/requirements/mariadb/.
+    container_name: mariadb
+    image: mariadb
+    hostname: mariadb
+    #ports: [0.0.0.0:3307:3306]
+    restart: always
+    volumes: [mariadb:/var/lib/mysql]
+    env_file: [$INCEPTION_PATH/srcs/.env]
+    networks: {inception_network: {ipv4_address: 192.168.99.2}}
+    stdin_open: true
+    tty: true
+  wordpress:
+    build: $INCEPTION_PATH/srcs/requirements/wordpress/.
+    container_name: wordpress
+    image: wordpress
+    hostname: wordpress
+    restart: always
+    volumes: [wordpress:/var/www]
+    env_file: [$INCEPTION_PATH/srcs/.env]
+    networks: {inception_network: {ipv4_address: 192.168.99.3}}
+    stdin_open: true
+    tty: true
+    depends_on: ["mariadb"]
+  nginx:
+    build: $INCEPTION_PATH/srcs/requirements/nginx/.
+    container_name: nginx
+    image: nginx
+    hostname: nginx
+    #ports: [0.0.0.0:443:443]
+    ports: [0.0.0.0:443:443, 0.0.0.0:80:80]
+    restart: always
+    volumes: [wordpress:/var/www]
+    env_file: [$INCEPTION_PATH/srcs/.env]
+    networks: {inception_network: {ipv4_address: 192.168.99.4}}
+    stdin_open: true
+    tty: true
+    depends_on: ["wordpress"]
+
+volumes:
+  wordpress: {name: wordpress, driver: local, driver_opts: {type: none, o: bind, device: $VOLUMES_PATH/wordpress}}
+  mariadb: {name: mariadb, driver: local, driver_opts: {type: none, o: bind, device: $VOLUMES_PATH/mariadb}}
+
+networks:
+  inception_network: {name: inception_network, driver: bridge, ipam: {config: [{subnet: 192.168.99.0/24, gateway: "192.168.99.254"}]}}
