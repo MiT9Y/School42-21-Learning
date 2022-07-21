@@ -28,8 +28,8 @@ The description of the projects will be contained in the project directories in 
 
 12. **webserver (2022-05-02)** - This project is here to make you write your own HTTP server. You will be able to test it with a real browser. HTTP is one of the most used protocol on internet. Knowing its arcane will be useful, even if you won't be working on a website.
 
-13. **ft_containers (2022-06-29)** - In this project, i implemented a few container types of the C++ standard template library (Vector, Stack, Map, Set). I used namespace ft for my containers and utils. Map and Set containers i implemented using red-black tree.
+13. **Piscine Python Django (2022-06-12)** - Piscines are an important time in your cursus, during which you will have the occasion to learn a new language, or even a new paradigm!
 
-14. **Piscine Python Django (2022-07-20)** - Piscines are an important time in your cursus, during which you will have the occasion to learn a new language, or even a new paradigm!
+14. **ft_containers (2022-06-29)** - In this project, i implemented a few container types of the C++ standard template library (Vector, Stack, Map, Set). I used namespace ft for my containers and utils. Map and Set containers i implemented using red-black tree.
 
 15. **Inception (2022-07-20)** - This project aims to broaden your knowledge of system administration by using Docker. You will virtualize several Docker images, creating them in your new personal virtual machine.
